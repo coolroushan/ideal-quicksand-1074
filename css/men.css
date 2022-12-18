@@ -13,6 +13,7 @@
 }
 .logo{
     width: 120px;
+    height: 40px;
     padding: 10px;
     background-color: white;
 }
@@ -310,6 +311,9 @@ h2{
     grid-template-columns: repeat(3,1fr);
     width: 90%;
 }
+#div4 img{
+    width: 40%;
+}
 #NewsletterSignup{
     width: 60%;
     display: grid;
@@ -341,3 +345,85 @@ h2{
     background-color: black;
     color: aliceblue;
 }
+.swiper {
+    margin-top: 10px;
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 90%;
+    margin: auto;
+    height: 100%;
+    object-fit: cover;
+  }
+  @media all and (min-width: 451px) and (max-width: 750px) {
+    #partners{
+        grid-template-columns: repeat(4,1fr);
+    }
+    #ShopWomen{
+        grid-template-columns: repeat(4,1fr);
+    }
+    #SpecialOffers{
+        grid-template-columns: repeat(1,1fr);
+    }
+    #communityPost{
+        grid-template-columns: repeat(2,1fr);
+    }
+    #download{
+        grid-template-columns: repeat(1,1fr);
+    }
+    #footer{
+        grid-template-columns: repeat(3,172px);
+        gap: 10px;
+    }
+    #footer button{
+        padding: 8px 56px;
+    }
+}
+@media all and (min-width: 100px) and (max-width: 450px) {
+    #partners{
+        grid-template-columns: repeat(3,1fr);
+    }
+    #ShopWomen{
+        grid-template-columns: repeat(2,1fr);
+    }
+    #SpecialOffers{
+        grid-template-columns: repeat(1,1fr);
+    }
+    #communityPost{
+        grid-template-columns: repeat(2,1fr);
+    }
+    #download{
+        grid-template-columns: repeat(1,1fr);
+    }
+    #footer{
+        grid-template-columns: repeat(3,142px);
+        gap: 10px; 
+    }
+    #footer button{
+        padding: 8px 55px;
+    }
+    
+  }

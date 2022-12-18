@@ -14,6 +14,7 @@
 .logo{
     width: 120px;
     padding: 10px;
+    height: 40px;
     background-color: white;
 }
 .logo>img{
@@ -24,7 +25,7 @@
 .option{
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(14,1fr);
+    grid-template-columns: repeat(15,1fr);
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
 }
 #search{
@@ -55,6 +56,50 @@
 .col a{
     color: rgb(35, 255, 218);
 }
+.burger{
+   cursor: pointer;
+   display: none;
+}
+.part{
+    width: 20px;
+    background-color: whitesmoke;
+    height: 3px;
+    margin: 3px;
+}
+ 
+.swiper {
+    margin-top: 10px;
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 90%;
+    margin: auto;
+    height: 100%;
+    object-fit: cover;
+  }
 h2{
     text-align: center;
     margin-top: 25px;
@@ -196,7 +241,7 @@ h2{
     margin-top: 13px;
     background-color: white;
     display: block;
-    margin: auto;
+    margin-left: 538px;
     border: 1px solid grey;
 }
 #communityPost{
@@ -274,7 +319,7 @@ h2{
     display: grid;
     grid-template-columns: repeat(5,1fr);
     padding: 18px 8px;
-    letter-spacing: 2px;
+    padding-left: 20px;
     margin-top: 50px;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
@@ -310,6 +355,9 @@ h2{
     grid-template-columns: repeat(3,1fr);
     width: 90%;
 }
+#div4 img{
+    width: 40%;
+}
 #NewsletterSignup{
     width: 60%;
     display: grid;
@@ -341,7 +389,92 @@ h2{
     background-color: black;
     color: aliceblue;
 }
-
+.footer-logo-con{
+    display: flex;
+    
+}
+.footer-logo-con>#footerimg{
+    width: 2%;
+}
+.footer-logo-con img{
+    width: 100%;
+    padding:10px 10px;
+}
+.footer-logo-con p{
+    padding-top: 14px;
+    padding-left: 20px;
+}
+@media all and (min-width: 451px) and (max-width: 750px) {
+    #partners{
+        grid-template-columns: repeat(4,1fr);
+    }
+    #ShopWomen{
+        grid-template-columns: repeat(4,1fr);
+    }
+    #SpecialOffers{
+        grid-template-columns: repeat(1,1fr);
+    }
+    #communityPost{
+        grid-template-columns: repeat(2,1fr);
+    }
+    #download{
+        grid-template-columns: repeat(1,1fr);
+    }
+    #footer{
+        grid-template-columns: repeat(3,172px);
+        gap: 10px;
+    }
+    #footer button{
+        padding: 8px 56px;
+    }
+    .option{
+        grid-template-columns: repeat(1,50px);
+    }
+    .burger{
+        display: block;
+        position: absolute;
+        justify-self: end;
+     }
+     .v-class{
+        opacity: 0;
+     }
+}
+@media all and (min-width: 100px) and (max-width: 450px) {
+    #partners{
+        grid-template-columns: repeat(3,1fr);
+    }
+    #ShopWomen{
+        grid-template-columns: repeat(2,1fr);
+    }
+    #SpecialOffers{
+        grid-template-columns: repeat(1,1fr);
+    }
+    #communityPost{
+        grid-template-columns: repeat(2,1fr);
+    }
+    #download{
+        grid-template-columns: repeat(1,1fr);
+    }
+    #footer{
+        grid-template-columns: repeat(3,142px);
+        gap: 10px; 
+    }
+    #footer button{
+        padding: 8px 55px;
+    }.option{
+        grid-template-columns: repeat(1,50px);
+        
+    }
+    .burger{
+        display: block;
+        position: absolute;
+        justify-self: end;
+        
+     }
+     .v-class{
+        opacity: 0;
+     }
+  }
 
 
 

@@ -23,7 +23,7 @@
             <h5><a href="./men.html">MEN</a></h5>
         </div>
         <div>
-            <h5><a href="./beauty.html">BEAUTY</a></h5>
+            <h5><a href="./beauty.html">ACCESSORIES</a></h5>
         </div>
         <div>
             <h5><a href="./kids.html">KIDS</a></h5>
@@ -52,13 +52,151 @@
         <div id="cart">
             <a href="./cart.html"><img src="img/cart.png" alt=""></a>
         </div>
-        <div>
-            <img src="img/profile.png" alt="">
+        <div id="signin">
+            <a href="signin.html"><img src="img/profile.png" alt=""></a>
         </div>
         <div id="search">
                 <h5>🔍 SEARCH</h5>
         </div>    
     </div>
 </div>
+<h1>Total Amount:- <span id="totalprice">0</span></h1>
+<div id="cart-container"></div> 
+  </div>
+  <!-- footer -->
+  <div id="footer">
+    <div id="div1">
+        <h4>CUSTOMER CARE</h4>
+        <ul>
+           
+            <li><p>Shopper Protection</p></li>
+            <li><p>Loyalty Program</p></li>
+            <li><p>Help Center</p></li>
+            <li><p>Size Guides</p></li>
+            <li><p>Contact Us / Feedback</p></li>
+            <li><p>Shipping / Returns</p></li>
+        </ul>
+    </div>
+    <div id="div2">
+        <h4>INFORMATION</h4>
+        <ul>
+            
+            <li><p>About Us</p></li>
+            <li><p>Influencer Program</p></li>
+            <li><p>Partner Stores</p></li>
+            <li><p>Sitemap</p></li>
+        </ul>
+    </div>
+    <div id="div3">
+        <h4>LEGAL</h4>
+        <ul>
+            
+            <li><p>Terms Of Use</p></li>
+            <li><p>Disclosure</p></li>
+            <li><p>Privacy Policy</p></li>
+            <li><p>Community Guidelines</p></li>
+        </ul>
+    </div>
+    <div id="div4">
+        <h4>CONNECT WITH US</h4>
+        <div>
+            <div>
+                <a href="https://apps.apple.com/app/id976201094" target="_blank">
+                    <img src="https://cdn.modesens.com/static/img/20220815download_ios.svg"alt=""></a>
+            </div>
+            <div>
+                <a href="https://play.google.com/store/apps/details?id=com.modesens.androidapp&pli=1" target="_blank">
+                    <img src="https://cdn.modesens.com/static/img/20220815download_android.svg" alt=""></a>
+            </div>
+            <div>
+                <a href="https://chrome.google.com/webstore/detail/modesens-shopping-assista/cmfmhegpbogfmojekmidappigcfbgbcb/" target="_blank">
+                    <img src="https://cdn.modesens.com/static/img/20220815down_chromestrore.svg" alt=""></a>
+            </div>
+        </div>
+    </div>
+    <div id="div5">
+        <h4>NEWSLETTER SIGN UP</h4>
+        <input style="border-top: 0px;border-left: 0px;border-right: 0px;" type="email" placeholder="Email Address">
+        <div id="NewsletterSignup">
+            <div class="Newsletter">
+                <div><input style="width: 15px"type="checkbox"></div>
+                <div><p>Women's</p></div>
+            </div>
+            <div class="Newsletter">
+                <div><input style="width: 15px"type="checkbox"></div>
+                <div><p>Men's</p></div>
+            </div>
+        </div>
+        <button>SUBMIT</button>
+        
+    </div>
+</div>
+<div class="footer-logo-con">
+    <div id="footerimg">
+        <img src="https://cdn.modesens.com/static/img/20180905footer_logo.svg" 
+    alt="">
+    </div>
+    <div>
+        <p>© 2022, ModeSens Inc</p></div>
+    </div>
 </body>
+<script>
+    let container = document.getElementById("cart-container"); 
+    let cartData = JSON.parse(localStorage.getItem("cart"));
+    if(cartData === null){
+      cartData = [];
+    }
+
+    displayProducts(cartData);
+
+    function displayProducts(data) {
+      container.innerHTML = null;
+      var total=0;
+      data.forEach((element,index) => {
+        total+=Number(element.price);
+        let card = document.createElement("div");
+          let image = document.createElement("img");
+          image.setAttribute("src",element.img);
+
+          let brand = document.createElement("h2");
+          brand.innerText = element.brand;
+
+          let price = document.createElement("h3");
+          price.innerText = element.price;
+
+          let details = document.createElement("p");
+          details.innerText = element.details;
+
+          let category = document.createElement("p");
+          category.innerText = element.category;
+
+          let increment = document.createElement("button");
+          increment.innerText = "+";
+          let quantity = document.createElement("span");
+          quantity.innerText = element.quantity;
+          let decrement = document.createElement("button");
+          decrement.innerText = "-";
+
+          let buyBtn= document.createElement("button");
+             buyBtn.textContent="BUY";
+
+          let deletBtn= document.createElement("button");
+             deletBtn.textContent="REMOVE";
+             deletBtn.addEventListener("click", function(){
+                Deletcart(index);
+            })
+        card.append(image,brand,price,details,category,increment,quantity,decrement,buyBtn,deletBtn);
+        container.append(card);
+      });
+      totalprice.innerText=total;
+
+    }
+    function Deletcart(index){
+        let deletedcart=cartData.filter(function(ele,i){
+            return i!== index;
+        })
+        displayProducts(deletedcart);
+        localStorage.setItem("cart",JSON.stringify(deletedcart))
+    }
+</script>
 </html>
